@@ -12,10 +12,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Welcome to PUTIH",
-  description: "Patient Display",
-};
+
+
+export const metadata = {
+  title: "PUTIH Dental",
+  description: "Display",
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default function RootLayout({
   children,
@@ -31,3 +37,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+
