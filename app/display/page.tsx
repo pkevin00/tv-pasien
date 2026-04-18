@@ -8,11 +8,15 @@ import {
 } from "lucide-react"
 
 export default function Display() {
+
+    if (typeof window === "undefined") return null
     
 const [name, setName] = useState("")
 const [theme, setTheme] = useState("1")
 
 useEffect(() => {
+  if (typeof window === "undefined") return
+
   const params = new URLSearchParams(window.location.search)
 
   setName(params.get("name") || "")
