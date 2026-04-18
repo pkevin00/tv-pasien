@@ -10,7 +10,14 @@ import {
 export default function Display() {
 
     if (typeof window === "undefined") return null
-    
+
+const [mounted, setMounted] = useState(false)
+
+useEffect(() => {
+  setMounted(true)
+}, [])
+
+
 const [name, setName] = useState("")
 const [theme, setTheme] = useState("1")
 
@@ -93,6 +100,8 @@ const getWeatherIcon = (code: number) => {
   if (code < 70) return <CloudRain className="w-10 h-10 text-white" />
   return <CloudLightning className="w-10 h-10 text-white" />
 }
+
+if (!mounted) return null
 
  return (
   <div className="relative h-screen w-screen overflow-hidden flex items-center justify-center">
