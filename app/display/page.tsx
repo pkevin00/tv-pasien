@@ -1,6 +1,4 @@
 "use client"
-export const dynamic = "force-dynamic"
-import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import {
   Sun,
@@ -11,8 +9,15 @@ import {
 
 export default function Display() {
     
-  const params = useSearchParams()
-  const name = params.get("name")
+const [name, setName] = useState("")
+const [theme, setTheme] = useState("1")
+
+useEffect(() => {
+  const params = new URLSearchParams(window.location.search)
+
+  setName(params.get("name") || "")
+  setTheme(params.get("theme") || "1")
+}, [])
 
   const safeName =
     !name || name === "null" || name === "undefined"
@@ -66,7 +71,7 @@ export default function Display() {
     return () => clearInterval(interval)
   }, [])
 
-const theme = params.get("theme") || "1"
+
 
 const videoMap: any = {
   "1": "/vid1.mp4",
