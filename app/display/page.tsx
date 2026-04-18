@@ -1,3 +1,5 @@
+export const revalidate = 0
+export const dynamic = "force-dynamic"
 "use client"
 import { useEffect, useState } from "react"
 import {
@@ -172,7 +174,7 @@ const getWeatherIcon = (code: number) => {
   <img
     src="/logo.png"
     alt="Logo PUTIH"
-    className="w-50 md:w-58 opacity-90 drop-shadow-lg"
+    className="w-40 md:w-48 opacity-90 drop-shadow-lg"
   />
 </div>
 
