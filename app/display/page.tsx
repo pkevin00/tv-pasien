@@ -9,7 +9,6 @@ import {
 
 export default function Display() {
 
-    if (typeof window === "undefined") return null
 
 const [mounted, setMounted] = useState(false)
 
@@ -86,8 +85,7 @@ useEffect(() => {
 
 const videoMap: any = {
   "1": "/vid1.mp4",
-  "2": "/vid2.mp4",
-  "3": "/bg3.mp4"
+  "2": "/vid2.mp4",    
 }
 
 const videoSrc = videoMap[theme] || "/vid1.mp4"
@@ -106,7 +104,7 @@ if (!mounted) return null
  return (
   <div className="relative h-screen w-screen overflow-hidden flex items-center justify-center">
 
-    {/* 🎬 VIDEO BACKGROUND */}
+    {/*  VIDEO BACKGROUND */}
     <video
       autoPlay
       muted
@@ -121,7 +119,7 @@ if (!mounted) return null
     <div className="absolute inset-0 bg-black/50"></div>
 
 
-{/* 🌤️ WEATHER (pojok kiri atas) */}
+{/*  WEATHER (pojok kiri atas) */}
 <div className="
   absolute top-8 left-10
   text-white
@@ -152,12 +150,12 @@ if (!mounted) return null
 
 </div>
 
-{/* 🌐 WEBSITE (bawah tengah) */}
+{/*  WEBSITE (bawah tengah) */}
 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-lg tracking-wide">
   www.putihdental.com
 </div>
 
-    {/* ⏰ CLOCK (pojok kanan atas) */}
+    {/*  CLOCK (pojok kanan atas) */}
     <div className="
   absolute top-8 right-10
   text-right text-white
@@ -176,7 +174,7 @@ if (!mounted) return null
       </p>
     </div>
 
-    {/* 🏥 LOGO (atas tengah) */}
+    {/*  LOGO (atas tengah) */}
 <div className="absolute top-8 left-1/2 -translate-x-1/2">
   <img
     src="/logo.png"
@@ -185,7 +183,7 @@ if (!mounted) return null
   />
 </div>
 
-    {/* 🧊 GLASS CARD (tengah) */}
+    {/*  GLASS CARD (tengah) */}
     <div className="
       relative
       backdrop-blur-2xl
